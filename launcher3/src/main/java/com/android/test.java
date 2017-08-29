@@ -1,0 +1,5 @@
+//private Bitmap getImdataDefaultThemeIcon(ComponentName componentName, UserHandleCompat user) {
+//// We don't keep icons for other profiles in persistent cache.
+//// We should change the icon according to cloudminds ui design.
+//defaultThemeIcon = null; Resources r = mContext.getResources(); String resName = getImdataDefaultThemeResId(componentName, user); String packageName = mContext.getPackageName(); final int resId = r.getIdentifier(resName, "drawable", packageName); defaultThemeIcon = BitmapFactory.decodeResource(r, resId); if (defaultThemeIcon == null) { Log.w(TAG, "getImdataDefaultThemeIcon no find default theme icon for " + resName); } return defaultThemeIcon; } private static String getImdataDefaultThemeResId(ComponentName component, UserHandleCompat user) { String resourceName = component.flattenToShortString(); String filename = resourceName.replace(File.separatorChar, '_'); String filePrefix = RESOURCE_FILE_PREFIX; filename = filename.replace('.', '_'); filename = filename.toLowerCase(); if (user.isEodUser()) { filePrefix = EOS_RES_FILE_PREFIX; } return filePrefix + filename; }
+//
